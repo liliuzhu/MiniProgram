@@ -1,0 +1,46 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/Audio/Audio",
+    
+    "pages/logs/logs",
+    "pages/Main/Main",
+    "template/album-list/album-list",
+    "pages/setting/setting",
+    "pages/setting/about/about",
+    "pages/setting/download/download",
+    "pages/setting/guide/guide",
+    "pages/setting/history/history"
+  ],
+  "window": {
+    "backgroundTextStyle": "red",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "SaintPoetry",
+    "navigationBarTextStyle": "#fff"
+  },
+"tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/music.png",
+        "text": "乐库"
+      },
+      {
+        "pagePath": "template/album-list/album-list",
+        "iconPath": "images/person.png",
+        "text": "个人中心"
+      },
+      {
+        "pagePath": "pages/Audio/Audio",
+        "iconPath": "images/luntan2.png",
+        "text": "论坛"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,6 @@
+<!--pages/queryImage/imageDetail.wxml-->
+<view class='container'>
+  <view class="image_box">
+    <image bindtap='lookDetail' src="{{bigImgSrc}}" mode="aspectFit"></image>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+/**index.wxss**/
+page{
+  height: 100%;
+}
+.modal{
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.8);
+  z-index: 100;
+}
+.image_box{
+  height:100%;
+  display:flex;
+  box-sizing:border-box;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+
+}
+.modal image{
+  width: 100%;
+}
+scroll-view{
+  height: 100%;
+}
+.img_list{
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+.img_list image{
+  width: 100%;
+}

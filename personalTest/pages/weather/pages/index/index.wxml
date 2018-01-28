@@ -1,0 +1,53 @@
+<import src="../../../common/statementFoot.wxml" />
+<view class='container'>
+    <swiper class='swiper_box' current="{{current}}"  indicator-dots="{{indicatorDots}}" duration="{{duration}}" circular="{{circular}}">
+        <block wx:for="{{weatherDatas}}"  wx:for-item="city" wx:key="{{index}}">
+            <swiper-item>
+                <view class='content'>
+                    <view class='today'>
+                        <view class='info'>
+                            <view class='info_content'>
+                                <view class='todayPictureUrl'>
+                                    <image mode='widthFix' src='{{isNight?city.today.nightPictureUrl:city.today.dayPictureUrl}}'></image>
+                                </view>
+                                <view>{{city.today.date}}</view>
+                                <view class='temp'>{{city.today.timelyTemperature}}</view>
+                                <view class='weather'>
+                                    <text decode="true">{{city.today.weather}}&emsp;{{city.today.temperature}}</text>
+                                </view>
+                                <view>{{today.wind}}</view>
+                                <view>PM2.5浓度：{{city.pm25||"无数据"}}</view>
+                                <view class='city'>
+									<text class='location' wx:if="{{index==0}}">📍</text>
+									{{city.currentCity}}
+								</view>
+                            </view>
+                        </view>
+                    </view>
+
+                    <view class='future'>
+                        <view wx:for="{{city.future}}" wx:for-item="item" wx:key="{{index}}" class='future-item'>
+                            <view class='pictures'>
+                                <view class='picture'>
+                                    <image mode='widthFix' src='{{item.dayPictureUrl}}'></image>
+                                    <text>白天</text>
+                                </view>
+                                <view class='picture'>
+                                    <image mode='widthFix' src='{{item.nightPictureUrl}}'></image>
+                                    <text>夜间</text>
+                                </view>
+                            </view>
+                            <view>{{item.date}}</view>
+                            <view>{{item.weather}}</view>
+                            <view>{{item.temperature}}</view>
+                            <view>{{item.wind}}</view>
+                        </view>
+                    </view>
+                </view>
+
+            </swiper-item>
+        </block>
+    </swiper>
+	<navigator url='../manageCity/manageCity' class="manageCity {{showed?'show':''}}" open-type='navigate'>＋</navigator>
+</view>
+<template data="{{statement:'声明：以上数据均来自百度'}}" is="statementFoot" />

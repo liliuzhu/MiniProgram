@@ -1,0 +1,7 @@
+/**index.wxss**/
+.view-item{
+  padding: 10px;
+  background-color: limegreen;
+  border-radius:5px;
+  margin: 5px;
+}

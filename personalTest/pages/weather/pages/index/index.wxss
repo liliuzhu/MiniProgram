@@ -1,0 +1,114 @@
+page {
+    line-height: 1.6;
+	background-image: -webkit-radial-gradient(0% 100%,circle,#75D373 0%,#85DE7A 25%, #56B66B 50%,#2A8D5A 75%, #04543A 100%);
+	background-color: #0f0;
+}
+.manageCity{
+	position: absolute;
+	bottom: -200rpx;
+	right: 2.5%;
+	z-index: 100;
+	height: 80rpx;
+	width:80rpx;
+	padding: 0;
+	line-height: 80rpx;
+	font-size: 2em;
+	border-radius: 50%;
+	transition: all 0.4s ease-in-out 0s;
+	background-color: #1AAD19;
+	color:#fff;
+	text-align: center;
+}
+.manageCity.show{
+	/* position: absolute;
+	bottom: 0; */
+	transform: translate3d(0,-200rpx,0);
+} 
+.swiper_box{
+	width: 100%;
+	height: 100%;
+}
+.page-foot{
+	color: #fff;
+}
+.content{
+	background-size: cover;
+	height: 100%; 
+	width: 100%;
+	color: #fff;
+	flex: 1；
+}
+.today{
+	box-sizing: border-box;
+	height: 50%;
+	padding-top: 50rpx; 
+}
+.info{
+	box-sizing: border-box;
+	padding: 40rpx 50rpx;
+	background-color: rgba(0,46,33,.4);
+	border-radius: 10rpx;
+	box-shadow: 20rpx 20rpx 30rpx rgba(50,50,50,.8);
+	width: 95%;
+	margin: 0 auto;
+	font-size: 0.8rem;
+}
+.info_content{
+	position: relative;
+}
+.info_content .todayPictureUrl{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30%;
+}
+.todayPictureUrl image{
+	width: 100%;
+}
+.temp{
+	font-size: 2rem;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.city{
+	text-align: right;
+	 font-size: 0.9rem; 
+}
+.location{
+	color:#fff;
+}
+.future{
+	width: 95%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	background-color: rgba(0,46,33,.4);
+	display: flex;
+	justify-content: space-around;
+	padding: 5rpx 10rpx;
+	border-radius: 10rpx;
+	box-shadow: 20rpx 20rpx 30rpx rgba(50,50,50,.8);
+}
+.future-item{
+	border: 1px solid #fff;
+	border-radius: 8rpx;
+	color: #fff;
+	padding: 80rpx 0;
+	text-align: center;
+	flex: 1;
+	font-size: 0.7rem;
+	margin:  10rpx 5rpx;
+}
+
+.future-item .pictures{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.picture{
+	width: 40%;
+}
+.future-item image{
+	width: 100%;
+}
+.future-item text{
+	font-size: 0.6rem;
+}

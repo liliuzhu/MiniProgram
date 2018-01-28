@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<scroll-view class='content' scroll-y="true" id="scroll-list"  scroll-with-animation="true" scroll-into-view="{{'inToView'+viewid}}" bindscroll="gdcf">
+  <view wx:for="{{act_addList}}">
+    <view class='address_top' id="{{'inToView'+item.id}}">{{item.region}}</view>
+    <view wx:for="{{item.city}}" wx:for-item="city" class='address_bottom'>{{city.name}}</view>
+</view>
+</scroll-view>
+<view class='orientation_region container'>
+  <view class='orientation'>自动定位</view>
+  <view class='orientation_city {{classifySelected==item.id?"active":""}}' data-id="{{item.id}}" bindtap='right_fl' wx:for="{{orientationList}}">{{item.region}}</view>
+</view>
+ <!-- <view class="container"></view>  -->

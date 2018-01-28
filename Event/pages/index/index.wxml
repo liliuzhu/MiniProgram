@@ -1,0 +1,7 @@
+<!--index.wxml-->
+ <view class="container">
+  <view>{{clickMsg}}</view>
+
+  <view id='view0' data-hi="data-view0" data-qf="data-qf0" class='view-item' bindtap='clickMe'>点击view0</view>
+  <view id='view1' data-hi="data-view1" data-qf="data-qf0" class='view-item' bindtap='clickMe'>点击view1</view>
+</view> 

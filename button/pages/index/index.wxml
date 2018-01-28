@@ -1,0 +1,13 @@
+<!--index.wxml-->
+ <view class="container">
+  <button size='default'>按钮</button>
+  <button size='mini'>按钮</button>
+  <button size='default' type='default'>按钮</button>
+  <button size='default' type='primary'>按钮</button>
+  <button size='default' type='warn'>按钮</button>
+  <button size='default' type='warn' plain='true'>按钮</button>
+  <button size='default' type='primary' disabled='true'>按钮</button>
+  <button size='default' type='primary' loading='true' bindtap='doLoading'>加载中</button>
+   <button size='default' type='warn' hover-class='none'>按钮</button>
+   <button open-type="contact" bindcontact='contactMsg'>进入客服会话</button>
+</view> 

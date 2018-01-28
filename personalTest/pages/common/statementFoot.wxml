@@ -1,0 +1,5 @@
+<template name="statementFoot">
+  <view class='page-foot'>
+	{{statement}}
+  </view>
+</template>

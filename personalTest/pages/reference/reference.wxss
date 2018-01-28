@@ -1,0 +1,24 @@
+@import "../common/common.wxss";
+page {
+background-color:#F8F8F8;
+height:100%;
+font-size:32rpx;
+line-height:1.6;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.index-logo,.userinfo-avatar{
+  width: 100rpx;
+  height: 100rpx;
+}
+.userinfo-avatar {
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}

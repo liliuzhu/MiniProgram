@@ -1,0 +1,12 @@
+<!--index.wxml-->
+ <view class="container">
+  <view class='view-section'>
+    <icon type="success"></icon>
+    <icon type="success" size="50" color="#f00"></icon>
+  </view>
+  <view class='view-section'>
+    <block wx:for="{{[10,20,30,40,50]}}">
+       <icon type='info' size="{{item}}"></icon>
+    </block>
+  </view>
+</view> 

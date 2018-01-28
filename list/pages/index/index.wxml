@@ -1,0 +1,40 @@
+<!--index.wxml-->
+ <view class="container">
+ <view> {{ message }} </view>
+ <view wx:for="{{array}}">{{item}}</view>
+ <!-- <view wx:for="{{array}}" wx:for-item="itemName">{{itemName}}</view> -->
+
+  <view wx:if="{{length > 5}}"> 1 </view>
+  <view wx:elif="{{length > 2}}"> 2 </view>
+  <view wx:else> 3 </view>
+
+  <!-- 定义一个模版 -->
+ <template name="qfName">
+  <view>姓名：{{name}} 年龄：{{age}}</view>
+ </template>
+<!-- 使用一个模版 is=“使用的模版的名字”data表示数据是从哪里来的 -->
+ <template is="qfName" data="{{...zhangshan}}"></template> 
+ <template wx:for="{{users}}"  is="qfName" data="{{...item}}"></template> 
+
+ <view bindtap='add' class='view-item'>{{count}}</view>  
+ <view hidden='hidden'>hidden</view>
+ <view wx:for="{{users}}">{{index + item.name+"-"+item.age}}</view>
+ <view wx:for="{{users}}" wx:for-index="i" wx:for-item="user">{{i + user.name+"-"+user.age}}</view>
+ <!-- 定义一个模版 -->
+ <template name="myTemplate">
+  <view>
+    <text>name : {{name}}  age : {{age}}</text>
+    <text> add : {{addr}}</text>
+  </view>
+ </template>
+ <!-- 使用一个模版 -->
+ <template is="myTemplate" data="{{name:'杨',age:30,addr:'北京'}}"></template> 
+ <template is="myTemplate" data="{{name:'戬',age:40,addr:'上海'}}"></template> 
+ <!-- xya数据是从data来的 -->
+ <template is="myTemplate" data="{{name:x,age:y,addr:a}}"></template>
+ <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+  <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="j">
+  {{i+" * "+j+" = "+i*j}}
+  </view>
+ </view>
+</view> 

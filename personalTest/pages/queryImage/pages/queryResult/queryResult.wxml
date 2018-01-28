@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class='container'>
+  <view style='display:none;'>
+    <image id="loadingImg_{{loadingImg.id}}" src='{{loadingImg.imgSrc}}' bindload="onImageLoad" binderror="onImageError"></image>
+  </view>
+  <view scroll-y="true" lower-threshold="50" upper-threshold="0" id='scroll-list' scroll-with-animation="true" bindscrolltoupper="getNetworkType" bindscrolltolower="getNetworkType">
+      <view class='columns'>
+        <view class='img_list' wx:for="{{columnsObj}}">
+          <view class='cell' wx:for="{{item.images}}" style="height:{{item.responseHeight}}px">
+          <image mode="widthFix" bindtap='lookBigImg' data-src="{{item.imgSrc}}"  wx:key="{{item.id}}" src='{{item.imgSrc}}'></image> 
+          </view>
+        </view>
+      </view>  
+  </view>
+</view>

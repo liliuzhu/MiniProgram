@@ -1,0 +1,24 @@
+<!--index.wxml-->
+ <view class="containers">
+ <view class='flex item'>
+  <view class='item-left'>
+     <image src='../images/0.jpg'></image> 
+  </view>
+  <view class='item-middle'>
+    <view><text class='title'>标题</text></view>
+    <view><text class='sub-title'>子标题</text></view>
+    <view><text class='actor'>演员表</text></view>
+  </view>
+  <view class='item-right'>
+    <view><text class='score'>9.7</text></view>
+    <view><text class='active'>购票</text></view>
+  </view>
+ </view>
+ <view class='flex item'>
+  <view class='item-left'>
+     <image src='https://www.baidu.com/img/bd_logo1.png'></image> 
+  </view>
+  <view class='item-middle'></view>
+  <view class='item-right'></view>
+ </view>
+</view> 

@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<import src="../../../common/statementFoot.wxml" />
+<view class='container' bindtap='blur'>
+  <view class='logo'>
+   <image mode='widthFix' src='https://www.baidu.com/img/bd_logo1.png'></image>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="query_box">
+      <input name="queryWord" bindinput="focusInput" bindfocus='focusInput' catchtap="inputTap" value="{{queryWord}}" class="weui-input" placeholder="热门图片"/> 
+      <button formType="submit"><text>百度图片</text></button>
+    </view>
+  </form>
+  <view class='options'>
+    <view bindtap='selectedOption' data-index="{{index}}" wx:key="{{index}}" class='option_box' wx:for="{{options}}">
+      <view class='option'>
+        <text wx:if="{{queryWord==''}}" catchtap="deleteHistory" data-index="{{index}}" class='right'>×</text>
+        <text class='matching_str'>{{item}}</text>
+      </view>
+    </view>
+    <view wx:if="{{queryWord==''&&options.length>0}}" class='option_box' style='text-align:right;'>
+      <view class='option'>
+             <text catchtap="clearHistory">清空历史记录</text>
+       </view>
+    </view>
+  </view> 
+</view>
+<template data="{{statement:'声明：以上数据均来自百度'}}" is='statementFoot'/>
