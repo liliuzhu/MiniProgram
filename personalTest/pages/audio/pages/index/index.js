@@ -3,10 +3,10 @@ let param={
  * 页面的初始数据
  */
 	data: {
-		poster: '//y.gtimg.cn/music/photo_new/T002R300x300M000002Qs4kp15D0dY.jpg?max_age=2592000',
-		name: '漂洋过海来看你',
-		author: '王丽坤/朱亚文',
-		src: 'http://dl.stream.qqmusic.qq.com/C400001gaIxC0dnLHp.m4a?vkey=37A0B7D851EB3AA4A6EA45411A5C4BD6F8E67BC8BDE064BB76F51B198E5DBE98686B8CF11B45422C85C78CCE3D98F8884AC5A39DB1924FEF&guid=2908924928&uin=0&fromtag=66'
+		poster: 'http://p1.music.126.net/84FJjDgb51TmRqixaUpshg==/109951163094476391.jpg',
+		name: '空空如也',
+		author: '任然',
+		src: 'http://m10.music.126.net/20180306142200/4b060e4603f8b1c27cce8422aad6deb7/ymusic/6428/0c3d/4a14/cef6263c9a09bfc03fafbb15f6a99533.mp3'
 	},
 	/**
  * 生命周期函数--监听页面加载
