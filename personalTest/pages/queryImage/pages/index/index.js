@@ -34,8 +34,10 @@ let param={
     this.setData({ options:[]});
   },
   selectedOption(e) {
-    var index = e.currentTarget.dataset.index;
-    this.setData({ queryWord: this.data.options[index]});
+    let  index = e.currentTarget.dataset.index;
+    let queryWord = this.data.options[index]
+    this.setData({ queryWord});
+    this.formSubmit({detail:{value:{queryWord}}})
   },
   deleteHistory(e) {
     var index = e.currentTarget.dataset.index;
