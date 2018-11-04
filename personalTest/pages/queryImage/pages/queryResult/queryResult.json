@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "百度图片",
   "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark"
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "imageWaterfall": "/components/ImageWaterfall/imageWaterfall"
+  }
 }

@@ -8,33 +8,6 @@ page{
 .container{
   padding: 0;
 }
-scroll-view,#scroll-list{
+imageWaterfall{
   height: 100%;
-  width: 100%;
-}
-.columns{
-  display: flex;
-  flex-direction:row;
-  justify-content:flex-start;
-}
-.columns .img_list{
-   /* width: 48%;  */
-  /* margin: 1%; */
-  flex: 1;
-  /* display: inline-block; */
-   vertical-align: top; 
-}
-.columns .img_list .cell{
-  overflow: hidden;
-  margin: 4% 0;
-}
-.img_list image{
-  width: 96%;
-   margin:0 2%; 
-}
-.img_list:first-child image{
-  /* margin:0 1.5% 0 2.5%; */
-}
-.img_list:last-child image{
-  /* margin:0 2.5% 0 1.5%; */
 }
