@@ -19,7 +19,9 @@
 		"pages/baiduMapDemo/pages/regeocoding/regeocoding",
 		"pages/baiduMapDemo/pages/search/search",
 		"pages/baiduMapDemo/pages/suggestion/suggestion",
-		"pages/baiduMapDemo/pages/weather/weather"
+		"pages/baiduMapDemo/pages/weather/weather",
+
+    "pages/webView/index"
 
 	],
 	"window": {
