@@ -4,13 +4,13 @@
 		<input bindinput='input' value='{{queryWord}}' placeholder='城市搜索' class='search_inpt'></input>
 		<icon type='clear' bindtap='clear' class='search_clear'></icon>
 		<view class='respons_list'>
-			  <view wx:for="{{matchingCity}}" bindtap='choice' data-name="{{item.name}}" class='respons_item'>
+			  <view wx:for="{{matchingCity}}" wx:key="{{index}}" bindtap='choice' data-name="{{item.name}}" class='respons_item'>
 			  {{item.name}} - {{item.path}}
 			  </view>  
 		</view>
 	</view>
 	<scroll-view scroll-y="true" class='city_list'>
-		<view wx:for="{{weatherCitys}}" bindlongtap='optWeatherCitys' data-index="{{index}}" class='city_item'>{{item}}</view>
+		<view wx:for="{{weatherCitys}}" wx:key="{{index}}" bindlongtap='optWeatherCitys' data-index="{{index}}" class='city_item'>{{item}}</view>
 	</scroll-view>
 </view>
 <!-- <template data="{{statement:'声明：以上数据均来自百度'}}" is="statementFoot" /> -->
