@@ -32,7 +32,7 @@ var param = {
       {
         id: '05',
         name: 'webView',
-        path: "../webView/index?webViewUrl=https://busi.rrcimg.com/owner-pay-front-end/files-cdn/sellingfast1percent-v1-20181127.html",
+        path: "../webView/index?webViewUrl=https://liliuzhu.gitee.io",
         logo: "../../static/baidu.jpg"
       }
 		]

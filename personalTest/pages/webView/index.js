@@ -1,12 +1,8 @@
 let param = {
-  data: {
-    webViewHost: 'http://owner-pay.shanyishanmei.com:8081/owner-pay-public/miniprogram-look-protocol?protocolUrl=',
-    webViewUrl: ''
-  },
+  data: {},
   onLoad: function (options) {
     try {
-      let url = options.webViewUrl
-      let webViewUrl = this.data.webViewHost + url;
+      let webViewUrl = options.webViewUrl
       this.setData({ webViewUrl })
     } catch (e) {
       // Do something when catch error

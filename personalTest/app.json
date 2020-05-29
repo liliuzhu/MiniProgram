@@ -3,7 +3,7 @@
 		"pages/index/index",
 		"pages/reference/reference",
 		"pages/logs/logs",
-		
+
 		"pages/weather/pages/index/index",
 		"pages/weather/pages/manageCity/manageCity",
 
@@ -11,7 +11,7 @@
 		"pages/queryImage/pages/queryResult/queryResult",
 		"pages/queryImage/pages/imageDetail/imageDetail",
 
-		
+
 		"pages/audio/pages/index/index",
 		"pages/audio/pages/backgroundAudio/backgroundAudio",
 
@@ -67,5 +67,6 @@
 		"uploadFile": 10000,
 		"downloadFile": 10000
 	},
-	"debug": false
+	"debug": false,
+    "sitemapLocation": "sitemap.json"
 }

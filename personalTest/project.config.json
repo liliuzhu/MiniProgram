@@ -6,12 +6,17 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"uglifyFileName": true
+		"autoAudits": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"useCompilerModule": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.1",
 	"appid": "wx5e5c9307b89fbe48",
 	"projectname": "personalTest",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
