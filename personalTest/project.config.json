@@ -9,7 +9,15 @@
 		"autoAudits": false,
 		"uglifyFileName": true,
 		"checkInvalidKey": true,
-		"useCompilerModule": false
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.1",
