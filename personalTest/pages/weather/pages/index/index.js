@@ -1,4 +1,3 @@
-let QQMapWX = require('../libs/qqmap-wx-jssdk1.0/qqmap-wx-jssdk.min.js');
 let bmap = require('../libs/bmap-wx/bmap-wx.min.js');
 let myAk = "GaNz2QUoC8XtolQcdScjcDvxMGwftiGC";
 let app = getApp();
@@ -44,6 +43,7 @@ let param = {
 		circular: false,
 		showed: false,
 		currentData: null,////当前城市数组
+		BMap: null // 地图对象
 	},
 	/* 生命周期函数--监听页面加载*/
 	onLoad: function (options) {
@@ -69,10 +69,10 @@ let param = {
 	initApp() {
 		this.showData(wx.getStorageSync("weatherHistory") || [templateData], 1);
 		app.showLoading(true);
-		let BMap = new bmap.BMapWX({
+		this.data.BMap = new bmap.BMapWX({
 			ak: myAk
 		});
-		BMap.regeocoding({// 发起regeocoding检索请求 
+		this.data.BMap.regeocoding({// 发起regeocoding检索请求 
 			fail(e) {
 				// console.error(e);
 				wx.showToast({
@@ -85,6 +85,7 @@ let param = {
 				setTimeout(function(){wx.navigateBack()},2000);
 			},
 			success: function (res) {
+				console.log(12455, res)
 				let city = res.originalData.result.addressComponent.city;
 				let district = res.originalData.result.addressComponent.district;
 				let weatherCitys = this.getWeatherCitys() || [];
@@ -98,21 +99,32 @@ let param = {
 	},
 	getWeatherInfo(citys) {
 		app.showLoading(true);
-		let url = 'https://api.map.baidu.com/telematics/v3/weather';
+		// let url = 'https://api.map.baidu.com/telematics/v3/weather';
 		var requestData = {
 			ak: myAk,
 			location: citys.join("|"),
 			output: "json"
 		};
-		app.promise(url, requestData).then(res => {
-			try {
-				wx.setStorageSync("weatherHistory", res.data.results);
-				this.showData(res.data.results);
-				app.showLoading();
-			} catch (e) {
+		var fail = function(data) { 
+			console.log(1234567, data) 
+		}; 
+		var success = function(data) { 
+			console.log(1234566, data)
+			app.showLoading();
+		}
+		this.data.BMap.weather({
+			fail: fail, 
+			success: success 
+		}); 
+		// app.promise(url, requestData).then(res => {
+		// 	try {
+		// 		wx.setStorageSync("weatherHistory", res.data.results);
+		// 		this.showData(res.data.results);
+		// 		app.showLoading();
+		// 	} catch (e) {
 
-			}
-		});
+		// 	}
+		// });
 	},
 	showData(datas) {
 		let weatherDatas = datas;
