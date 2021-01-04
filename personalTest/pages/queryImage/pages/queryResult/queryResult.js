@@ -6,6 +6,7 @@ let isToImageDetail = false;//是否前往图片详情页查看图片
 let requertLength=30;
 let param = {
 	data: {
+		confirmUserGPS: false,
 		columns: 2,
     isLoading: false,
     imageList: []  // 图片列表
@@ -55,12 +56,17 @@ let param = {
             }
           })
         } else {
+					if(_this.data.confirmUserGPS){
+						_this.requestImages();
+						return
+					}
           wx.showModal({
             title: '提示',
             content: "当前处于 " + networkType + " 网络，确认浏览图片吗?",
             success: function (res) {
               if (res.confirm) {// console.log('用户点击确定')
-                this.requestImages();
+							_this.requestImages();
+							_this.data.confirmUserGPS = true
               } else if (res.cancel) {// console.log('用户点击取消');
                 wx.navigateBack();
               }
