@@ -4,7 +4,7 @@
 		<image wx:if="{{!userInfo.avatarUrl}}" class="index-logo" src="../../static/logo.png"></image> 
 		<image wx:else class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
 		 <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-     <button wx:if="{{!userInfo.avatarUrl}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+     <button wx:if="{{!userInfo.avatarUrl}}" open-type="getUserInfo" bindtap="onGotUserInfo">获取用户信息</button>
 	</view>
     <view class="index-desc">
     以下是我的小程序学习与测试集合。

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../RRC/RRC_crm-fe/.idea/RRC_crm-fe.iml" filepath="$PROJECT_DIR$/../../../RRC/RRC_crm-fe/.idea/RRC_crm-fe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/personalTest.iml" filepath="$PROJECT_DIR$/.idea/personalTest.iml" />
+    </modules>
+  </component>
+</project>

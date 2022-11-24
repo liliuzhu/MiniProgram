@@ -38,7 +38,7 @@ var param = {
 		]
 	},
 	onLoad(option) {
-		this.getUserInfo();
+		this.onGotUserInfo();
 	},
 	getUserInfo: function () {	
 		if (app.globalData.userInfo) {
@@ -54,13 +54,22 @@ var param = {
 				})
 			}
 		}
-	},
-  onGotUserInfo: function (e) {
-    // console.log(e.detail.errMsg)
-    // console.log(e.detail.userInfo)
-    // console.log(e.detail.rawData)
-    app.globalData.userInfo = e.detail.userInfo
-    this.getUserInfo();
+  },
+  onGotUserInfo: function () {
+    console.log(app.globalData.UserInfo);
+    console.log(131312, app.globalData.userInfo);
+    if(!app.globalData.userInfo){
+      wx.getUserProfile({
+        desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+        success: (res) => {
+          console.log(1212, res);
+          app.globalData.userInfo = res.userInfo
+          this.getUserInfo()
+        }
+      })
+    } else {
+      this.getUserInfo()
+    }
   },
 	navigateTo(e) {
 		let path = e.currentTarget.dataset.path;

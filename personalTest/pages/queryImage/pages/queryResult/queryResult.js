@@ -88,10 +88,10 @@ let param = {
       gsm: parseInt(length).toString(16),
 			queryWord: keyWord,
 			word: keyWord || "pcindexhot",
-			catename: keyWord || "pcindexhot"
+			// catename: keyWord || "pcindexhot"
 		};
 		requestData["" + Date.now()] = "";
-		let url = 'https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=';
+    let url = 'https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&logid=7578759849659843688&cg=girl&hd=&latest=&copyright=&expermode=&nojc=&isAsync=';
 		app.promise(url, requestData).then(res => {
 			let responseData = [];
 			try {
@@ -106,7 +106,7 @@ let param = {
 			} catch (e) {
         this._loaded();
 			}
-      let images = responseData.reduce((prev, cur) => {
+      let images = (responseData || []).reduce((prev, cur) => {
         cur && cur.middleURL && prev.push(cur.middleURL);
         return prev;
       }, [])
