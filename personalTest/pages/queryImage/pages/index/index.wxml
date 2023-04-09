@@ -6,12 +6,12 @@
   </view>
   <form bindsubmit="formSubmit">
     <view class="query_box">
-      <input name="queryWord" bindinput="focusInput" bindfocus='focusInput' catchtap="inputTap" value="{{queryWord}}" class="weui-input" placeholder="热门图片"/> 
+      <input name="queryWord" bindinput="focusInput" bindfocus='focusInput' catchtap="inputTap" model:value="{{queryWord}}" class="weui-input" placeholder="{{placeholder}}"/> 
       <button formType="submit"><text>百度图片</text></button>
     </view>
   </form>
   <view class='options'>
-    <view bindtap='selectedOption' data-index="{{index}}" wx:key="{{index}}" class='option_box' wx:for="{{options}}">
+    <view bindtap='selectedOption' data-index="{{index}}" wx:key="index" class='option_box' wx:for="{{options}}">
       <view class='option'>
         <text wx:if="{{queryWord==''}}" catchtap="deleteHistory" data-index="{{index}}" class='right'>×</text>
         <text class='matching_str'>{{item}}</text>

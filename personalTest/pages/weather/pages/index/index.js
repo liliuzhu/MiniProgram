@@ -85,7 +85,6 @@ let param = {
 				setTimeout(function(){wx.navigateBack()},2000);
 			},
 			success: function (res) {
-				console.log(12455, res)
 				let city = res.originalData.result.addressComponent.city;
 				let district = res.originalData.result.addressComponent.district;
 				let weatherCitys = this.getWeatherCitys() || [];
@@ -97,34 +96,37 @@ let param = {
 	getWeatherCitys(){
 		return wx.getStorageSync("weatherCitys");
 	},
-	getWeatherInfo(citys) {
+	getWeatherInfo(citys = []) {
 		app.showLoading(true);
-		// let url = 'https://api.map.baidu.com/telematics/v3/weather';
+    let url = 'https://api.map.baidu.com/weather/v1';
 		var requestData = {
 			ak: myAk,
-			location: citys.join("|"),
-			output: "json"
+      location: citys.join("|"),
+      // location: '116.40387,39.91489'
+      // data_type: 'all',
+      output: "json",
+      coordtype: 'gcj02'
 		};
-		var fail = function(data) { 
-			console.log(1234567, data) 
-		}; 
-		var success = function(data) { 
-			console.log(1234566, data)
-			app.showLoading();
-		}
-		this.data.BMap.weather({
-			fail: fail, 
-			success: success 
-		}); 
-		// app.promise(url, requestData).then(res => {
-		// 	try {
-		// 		wx.setStorageSync("weatherHistory", res.data.results);
-		// 		this.showData(res.data.results);
-		// 		app.showLoading();
-		// 	} catch (e) {
-
-		// 	}
-		// });
+		// var fail = function(data) { 
+		// 	console.log(1234567, data) 
+		// }; 
+		// var success = function(data) { 
+		// 	console.log(1234566, data)
+		// 	app.showLoading();
+		// }
+		// this.data.BMap.weather({
+		// 	fail: fail, 
+		// 	success: success 
+		// }); 
+		app.promise(url, requestData, 'application/json').then(res => {
+			try {
+				wx.setStorageSync("weatherHistory", res.data.results);
+				this.showData(res.data.results);
+				app.showLoading();
+			} catch (e) {
+        app.showLoading();
+			}
+		});
 	},
 	showData(datas) {
 		let weatherDatas = datas;

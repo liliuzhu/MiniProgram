@@ -26,15 +26,16 @@ imageWaterfall{
 }
 .columns .img_list .cell{
   overflow: hidden;
-  margin: 4% 0;
+  margin-bottom: 4%;
 }
 .img_list image{
+  box-sizing: border-box;
   width: 96%;
-   margin:0 2%; 
+  margin: 0 auto;
 }
-.img_list:first-child image{
-  /* margin:0 1.5% 0 2.5%; */
+/* .img_list:first-child image{
+  margin:0 1.5% 0 2.5%;
 }
 .img_list:last-child image{
-  /* margin:0 2.5% 0 1.5%; */
-}
+  margin:0 2.5% 0 1.5%;
+} */

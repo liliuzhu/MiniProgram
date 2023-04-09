@@ -4,6 +4,7 @@ const app = getApp();
 let param={
   data:{
     queryWord:"",
+    placeholder: "热门图片",
     options:[]
   },
   onLoad:function(options){
@@ -13,15 +14,18 @@ let param={
     }
   },
   formSubmit(e){
-    var queryWord = e.detail.value.queryWord;
+    // var queryWord = e.detail.value.queryWord;
+    var queryWord = this.data.queryWord;
     this.setHistory(queryWord);
     wx.navigateTo({
-      url: '../queryResult/queryResult?queryWord=' + queryWord
+      url: '../queryResult/queryResult?queryWord=' + (queryWord || this.data.placeholder)
     })
   },
   inputTap(){},//点击
   focusInput(e){//获取焦点事件
-    let value = e.detail.value;
+    // let value = e.detail.value.trim();
+    // console.log(value, this.data.queryWord);
+    let value = this.data.queryWord = this.data.queryWord.trim() // 双向绑定
     if (value){//请求数据
       this.requestMatching(value);
     }else{//获取历史数据
@@ -55,7 +59,7 @@ let param={
 	app.promise(url, requestData).then(res => {
 		try {
           let left = res.data.lastIndexOf("[");
-          let arr = JSON.parse(res.data.slice(left, -3));
+          let arr = JSON.parse(res.data.slice(left, -2));
           this.setData({ options: arr }); 
         }catch(e){
 		}

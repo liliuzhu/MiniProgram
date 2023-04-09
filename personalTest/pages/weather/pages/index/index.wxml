@@ -1,7 +1,7 @@
 <import src="../../../common/statementFoot.wxml" />
 <view class='container'>
     <swiper class='swiper_box' current="{{current}}"  indicator-dots="{{indicatorDots}}" duration="{{duration}}" circular="{{circular}}">
-        <block wx:for="{{weatherDatas}}"  wx:for-item="city" wx:key="{{index}}">
+        <block wx:for="{{weatherDatas}}"  wx:for-item="city" wx:key="index">
             <swiper-item>
                 <view class='content'>
                     <view class='today'>
@@ -26,7 +26,7 @@
                     </view>
 
                     <view class='future'>
-                        <view wx:for="{{city.future}}" wx:for-item="item" wx:key="{{index}}" class='future-item'>
+                        <view wx:for="{{city.future}}" wx:for-item="item" wx:key="index" class='future-item'>
                             <view class='pictures'>
                                 <view class='picture'>
                                     <image mode='widthFix' src='{{item.dayPictureUrl}}'></image>

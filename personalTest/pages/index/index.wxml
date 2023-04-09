@@ -12,7 +12,7 @@
   </view>
   <view class="index-bd">
     <view class="kind-list">
-      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+      <block wx:for ="{{list}}" wx:for-item="item" wx:key="id">
         <view class="kind-list-item">
           <view id="{{item.id}}" class="kind-list-item-hd" data-path="{{item.path}}" bindtap='navigateTo'>
             <view class="kind-list-text">{{item.name}}</view>

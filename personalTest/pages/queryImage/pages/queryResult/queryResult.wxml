@@ -1,4 +1,7 @@
 <!--index.wxml-->
+<!-- <page-meta
+  page-style="{{pageStyle}}">
+</page-meta> -->
 <view class='container'>
   <imageWaterfall
     bind:loaded="_loaded"

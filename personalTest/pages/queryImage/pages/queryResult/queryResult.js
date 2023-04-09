@@ -6,29 +6,34 @@ let isToImageDetail = false;//是否前往图片详情页查看图片
 let requertLength=30;
 let param = {
 	data: {
-		confirmUserGPS: false,
+    // pageStyle: '',
+		confirmUserGPRS: false,
 		columns: 2,
     isLoading: false,
+    finished: false,
     imageList: []  // 图片列表
 	},
 	onLoad: function (options) {
 		try {
-			// queryWord="女"
 			queryWord = options.queryWord
 			this.initPage();
 		} catch (e) {
 			// Do something when catch error
 		} finally {
-			wx.setNavigationBarTitle({ title: queryWord || "热门图片" });
+			wx.setNavigationBarTitle({ title: queryWord });
 		}
 	},
   onReachBottom() { // 滑动到底部
 		// console.log("触底了");
 		this.getNetworkType();
-	},
+  },
+  // onPageScroll(){ 
+  //   console.log(current);
+  // },
 	onPullDownRefresh: function () { // 下拉刷新
     this.data.imageList = [];
     this.data.isLoading = false;
+    this.data.finished = false;
 		this.initPage();
 	},
 	initPage() {//初始化页面
@@ -56,7 +61,7 @@ let param = {
             }
           })
         } else {
-					if(_this.data.confirmUserGPS){
+					if(_this.data.confirmUserGPRS){
 						_this.requestImages();
 						return
 					}
@@ -66,7 +71,7 @@ let param = {
             success: function (res) {
               if (res.confirm) {// console.log('用户点击确定')
 							_this.requestImages();
-							_this.data.confirmUserGPS = true
+							_this.data.confirmUserGPRS = true
               } else if (res.cancel) {// console.log('用户点击取消');
                 wx.navigateBack();
               }
@@ -79,7 +84,7 @@ let param = {
 	requestImages() {//请求图片
     if (this.data.isLoading) { return }
 		this.data.isLoading = true;
-		app.showLoading(true);
+    // app.showLoading(true);
 		var keyWord = queryWord;//关键字
     let length = this.data.imageList.length
 		var requestData = {
@@ -87,7 +92,7 @@ let param = {
 			rn: requertLength,
       gsm: parseInt(length).toString(16),
 			queryWord: keyWord,
-			word: keyWord || "pcindexhot",
+			word: keyWord,
 			// catename: keyWord || "pcindexhot"
 		};
 		requestData["" + Date.now()] = "";
@@ -99,9 +104,9 @@ let param = {
 					responseData = res.data.data
 				} else if (typeof res.data == "string") {
 					var str = res.data.replace(/|\\'|\\"/gi, "");
-					var patt1 = /\\/gi;
-					var result = patt1.test(str);
-					responseData = JSON.parse(str).data;
+					// var patt1 = /\\/gi;
+					// var result = patt1.test(str);
+          responseData = JSON.parse(str).data;
 				}
 			} catch (e) {
         this._loaded();
@@ -116,7 +121,9 @@ let param = {
 					title: '没有更多图片了',
 					icon: 'none',
 					duration: 2000
-				})
+        })
+        this.data.finished = true
+        return
 			}
       this.data.imageList.push(...images);
       // console.log(this.data.imageList)
@@ -124,7 +131,7 @@ let param = {
 		}, error => {
 
 		});
-	},
+  },
   _lookBigImg(e) {
     let currentSrc = e.detail.currentTarget.dataset.src;
 		if (isToImageDetail) {//是否前往图片详情页查看图片
@@ -143,6 +150,6 @@ let param = {
     this.data.isLoading = false;
     app.showLoading();
     wx.stopPullDownRefresh();
-  }
+  } 
 }
 Page(param);

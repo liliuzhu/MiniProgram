@@ -5,9 +5,12 @@ page{
   text-align: center;
   overflow-y: auto;
 }
+page-meta{
+  display: none;
+}
 .container{
   padding: 0;
 }
-imageWaterfall{
+/* imageWaterfall{
   height: 100%;
-}
+} */

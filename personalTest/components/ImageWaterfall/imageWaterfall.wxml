@@ -5,8 +5,8 @@
   </view>
   <view scroll-y="true" lower-threshold="50" upper-threshold="0" class="scroll-list" scroll-with-animation="true" bindscrolltolower="getNetworkType">
       <view class='columns'>
-        <view class='img_list' wx:for="{{columnsObj}}"  wx:key="{{index}}">
-          <view class='cell' wx:for="{{item.images}}" wx:key="{{item.id}}" style="height:{{item.responseHeight}}px">
+        <view class='img_list' wx:for="{{columnsObj}}"  wx:key="index">
+          <view class='cell' wx:for="{{item.images}}" wx:key="id" style="height:{{item.responseHeight}}px">
             <image mode="widthFix" bindtap='lookBigImg' data-src="{{item.imgSrc}}" src='{{item.imgSrc}}'/> 
           </view>
         </view>

@@ -13,7 +13,7 @@ var param = {
 			},
 			{
 				id: '02',
-				name: '天气查询',
+				name: '百度天气查询-已失效',
 				path: "../weather/pages/index/index",
 				logo: "../../static/baidu.jpg"
 			},
@@ -57,7 +57,6 @@ var param = {
   },
   onGotUserInfo: function () {
     console.log(app.globalData.UserInfo);
-    console.log(131312, app.globalData.userInfo);
     if(!app.globalData.userInfo){
       wx.getUserProfile({
         desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
