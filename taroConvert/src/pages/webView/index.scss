@@ -1,0 +1,21 @@
+.page-body{
+  position: relative;
+}
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 30px;
+  position: absolute;
+  z-index: 0
+}
+web-view{
+  height: 20px !important;
+  width: 20px;
+}
+.btnsssss{
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 20
+}

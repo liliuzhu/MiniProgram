@@ -39,7 +39,7 @@ var param = {
 	},
 	onLoad(option) {
 		this.onGotUserInfo();
-	},
+  },
 	getUserInfo: function () {	
 		if (app.globalData.userInfo) {
 			this.setData({

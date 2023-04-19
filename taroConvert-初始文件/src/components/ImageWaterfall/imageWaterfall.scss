@@ -1,0 +1,41 @@
+/* components/ImageWaterfall/imageWaterfall.wxss */
+/**index.wxss**/
+imageWaterfall{
+  display: block;
+  width: 100%;
+}
+.waterfall_container{
+  padding: 0;
+  height: 100%;
+}
+.scroll-list{
+  height: 100%;
+  width: 100%;
+}
+.columns{
+  display: flex;
+  flex-direction:row;
+  justify-content:flex-start;
+}
+.columns .img_list{
+   /* width: 48%;  */
+  /* margin: 1%; */
+  flex: 1;
+  /* display: inline-block; */
+   vertical-align: top; 
+}
+.columns .img_list .cell{
+  overflow: hidden;
+  margin-bottom: 4%;
+}
+.img_list image{
+  box-sizing: border-box;
+  width: 96%;
+  margin: 0 auto;
+}
+/* .img_list:first-child image{
+  margin:0 1.5% 0 2.5%;
+}
+.img_list:last-child image{
+  margin:0 2.5% 0 1.5%;
+} */

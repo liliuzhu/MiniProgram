@@ -1,0 +1,89 @@
+/**index.wxss**/
+page{
+  height: 100%;
+  box-sizing:border-box;
+  text-align: center;
+  overflow-y: auto;
+}
+.container{
+  padding: 0;
+  justify-content: flex-start;
+}
+.logo{
+  width: 80%;
+}
+.logo image{
+  width: 100%;
+}
+form{
+  width: 80%;
+}
+form .weui-cells{
+  border-right: 1px solid #D9D9D9;
+  
+}
+.query_box{
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+   height:2.6em;
+}
+.query_box input{
+  box-sizing: border-box;
+  border: 2px solid #D9D9D9;
+  text-align: left;
+  height:100%; 
+  width: 100%;
+  padding: 0 6.5rem 0 20px;
+  /* border-radius: 5px; */
+}
+.query_box button{
+  position: absolute;
+  width: 6rem;
+  padding: 0;
+  border: 2px solid #38f;
+  background-color: #38f;
+  color: #fff;
+  height: 100%;
+  line-height: 3em; 
+  top: 0;
+  right:0;
+  font-size: 0.8em;
+  border-radius: 1px;
+}
+.query_box button::after{
+  display: none;
+}
+.options{
+  max-height: 700px;
+  overflow: auto;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  width: 80%;
+  text-align: left;
+}
+.options .option_box{
+  padding: 0 20px;
+}
+.options .option_box:active{
+  background-color: #D9D9D9;
+}
+.options .option_box:not(:last-child) .option{
+  border-bottom: 2px solid #fff;
+}
+.options .option_box .option{
+  padding: 15px 0;
+  font-size: 40px; 
+}
+.matching_str{
+  margin-right: 30px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+.right{
+  float: right;
+  font-weight: bolder;
+  /* font-size: 35rpx; */
+}

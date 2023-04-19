@@ -15,7 +15,7 @@
                                 <view class='weather'>
                                     <text decode="true">{{city.today.weather}}&emsp;{{city.today.temperature}}</text>
                                 </view>
-                                <view>{{today.wind}}</view>
+                                <view>{{city.today.wind}}</view>
                                 <view>PM2.5浓度：{{city.pm25||"无数据"}}</view>
                                 <view class='city'>
 									<text class='location' wx:if="{{index==0}}">📍</text>

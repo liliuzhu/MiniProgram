@@ -1,0 +1,66 @@
+export default {
+  pages: [
+    'pages/index/index',
+    'pages/reference/reference',
+    'pages/logs/logs',
+    'pages/weather/pages/index/index',
+    'pages/weather/pages/manageCity/manageCity',
+    'pages/queryImage/pages/index/index',
+    'pages/queryImage/pages/queryResult/queryResult',
+    'pages/queryImage/pages/imageDetail/imageDetail',
+    'pages/audio/pages/index/index',
+    'pages/audio/pages/backgroundAudio/backgroundAudio',
+    'pages/baiduMapDemo/pages/regeocoding/regeocoding',
+    'pages/baiduMapDemo/pages/search/search',
+    'pages/baiduMapDemo/pages/suggestion/suggestion',
+    'pages/baiduMapDemo/pages/weather/weather',
+    'pages/webView/index',
+  ],
+  permission: {
+    'scope.userLocation': {
+      desc: '你的位置信息将用于小程序位置接口的效果展示',
+    },
+  },
+  requiredPrivateInfos: ['getLocation'],
+  window: {
+    backgroundTextStyle: 'light',
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTitleText: 'WeChat',
+    navigationBarTextStyle: 'black',
+  },
+  tabBar: {
+    color: '#7A7E83',
+    selectedColor: '#3cc51f',
+    borderStyle: 'black',
+    backgroundColor: '#ffffff',
+    list: [
+      {
+        pagePath: 'pages/index/index',
+        iconPath: 'static/icon_component.png',
+        selectedIconPath: 'static/icon_component_HL.png',
+        text: '原创',
+      },
+      {
+        pagePath: 'pages/reference/reference',
+        iconPath: 'static/icon_API.png',
+        selectedIconPath: 'static/icon_API_HL.png',
+        text: '参考',
+      },
+      {
+        pagePath: 'pages/logs/logs',
+        iconPath: 'static/icon_API.png',
+        selectedIconPath: 'static/icon_API_HL.png',
+        text: '日志',
+      },
+    ],
+  },
+  networkTimeout: {
+    request: 10000,
+    connectSocket: 10000,
+    uploadFile: 10000,
+    downloadFile: 10000,
+  },
+  debug: false,
+  sitemapLocation: 'sitemap.json',
+  lazyCodeLoading: 'requiredComponents',
+}

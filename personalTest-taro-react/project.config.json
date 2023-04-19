@@ -1,0 +1,42 @@
+{
+  "miniprogramRoot": "dist/weapp/",
+  "projectname": "taroConvert",
+  "description": "项目配置文件。",
+  "appid": "wx5e5c9307b89fbe48",
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "enhance": false,
+    "compileHotReLoad": false,
+    "postcss": false,
+    "minified": false,
+    "minifyWXSS": false,
+    "minifyWXML": false,
+    "autoAudits": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false
+  },
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {},
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "libVersion": "2.19.6",
+  "srcMiniprogramRoot": "dist/weapp/"
+}
