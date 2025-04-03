@@ -3,5 +3,6 @@
   "projectname": "personalTest-taro-react",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "libVersion": "2.21.4"
 }
